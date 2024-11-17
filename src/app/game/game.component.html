@@ -1,0 +1,47 @@
+<div class="container" *ngIf="currentAccount; else welcome">
+  <h1 class="title">Rock-Paper-Scissors</h1>
+  <p class="address">Connected: {{ currentAccount }}</p>
+
+  <div class="game-buttons">
+    <button (click)="play(0)" class="btn" [disabled]="processing">Rock</button>
+    <button (click)="play(1)" class="btn" [disabled]="processing">Paper</button>
+    <button (click)="play(2)" class="btn" [disabled]="processing">Scissors</button>
+  </div>
+
+  <p *ngIf="gameResult; else placeholder" class="results">{{ gameResult }}</p>
+  <p *ngIf="outcome" class="results">{{ outcome }}</p>
+  <ng-template #placeholder>
+    <div style="height: 45px; "></div>
+  </ng-template>
+</div>
+
+<ng-template #welcome>
+  <div class="container welcome">
+    <h1 class="welcome-phrase">Welcome to Rock-Paper-Scissors!</h1>
+    <span class="row">
+      <h2 class="connect">Connect your Metamask wallet to play: </h2>
+      <button class="btn">Connect Wallet</button>
+    </span>
+
+  </div>
+</ng-template>
+
+<div class="hist-container" *ngIf="history.length != 0">
+  <h1 class="hist-label">History</h1>
+  <table>
+    <thead>
+      <th>Move</th>
+      <th>Result</th>
+      <th>Amount</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let game of history.slice(Math.max(history.length - 5, 0))">
+        <td>{{ game.move }}</td>
+        <td>{{ game.result }}</td>
+        <td>{{ game.amount }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="total">Total: {{ this.total }}</p>
+</div>
+
