@@ -36,7 +36,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let game of history.slice(Math.max(history.length - 5, 0))">
-        <td>{{ game.move }}</td>
+        <td>{{ game.move.charAt(0).toUpperCase() + game.move.slice(1) }}</td>
         <td>{{ game.result }}</td>
         <td>{{ game.amount }}</td>
       </tr>

@@ -4,9 +4,8 @@
   border-radius: 8px;
   padding: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 800px;
-  min-width: 631px;
+  width: 800px;
+  margin-top: 10vh;
 }
 
 .welcome-phrase {
@@ -110,13 +109,11 @@ p.address {
 
 .hist-container {
   background-color: #fff;
-  position: absolute;
-  top: 35%;
-  right: 10px;
   border-radius: 8px;
   padding: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 800px;
+  margin-top: 15px;
 
   .hist-label {
     margin-bottom: 10px;
